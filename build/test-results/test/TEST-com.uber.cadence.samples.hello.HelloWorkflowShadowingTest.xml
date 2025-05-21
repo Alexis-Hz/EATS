@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.uber.cadence.samples.hello.HelloWorkflowShadowingTest" tests="1" skipped="1" failures="0" errors="0" timestamp="2025-05-21T04:40:24" hostname="Alexiss-MacBook-Pro.local" time="0.0">
+  <properties/>
+  <testcase name="testShadowing" classname="com.uber.cadence.samples.hello.HelloWorkflowShadowingTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - Class com.uber.cadence.samples.bookingsaga.TripBookingWorkflowTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>Class com.uber.cadence.samples.bookingsaga.TripBookingWorkflowTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/com.uber.cadence.samples.bookingsaga.html">com.uber.cadence.samples.bookingsaga</a> &gt; TripBookingWorkflowTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">2</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.244s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">testSAGA</td>
+<td class="success">0.233s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testTripBookingFails</td>
+<td class="success">0.011s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>21:40:24.613 [workflow-root] ERROR c.u.c.i.s.POJOWorkflowImplementationFactory - Workflow execution failure WorkflowID=36db7f4a-b82c-4f2a-a1b3-59b49910ea1f, RunID=e5730835-f01b-4107-80f3-d9cae926b6b3, WorkflowType=TripBookingWorkflow::bookTrip
+com.uber.cadence.workflow.ActivityFailureException: ActivityFailureException, ActivityType=&quot;TripBookingActivities::bookFlight&quot;, ActivityID=&quot;null&quot;, EventID=19
+	at java.base/java.lang.Thread.getStackTrace(Thread.java:1602)
+	at com.uber.cadence.internal.sync.ActivityStubBase.execute(ActivityStubBase.java:46)
+	at com.uber.cadence.internal.sync.ActivityStubImpl.execute(ActivityStubImpl.java:26)
+	at com.uber.cadence.internal.sync.ActivityInvocationHandler.lambda$getActivityFunc$0(ActivityInvocationHandler.java:51)
+	at com.uber.cadence.internal.sync.ActivityInvocationHandlerBase.invoke(ActivityInvocationHandlerBase.java:76)
+	at com.sun.proxy.$Proxy15.bookFlight(Unknown Source)
+	at com.uber.cadence.samples.bookingsaga.TripBookingWorkflowImpl.bookTrip(TripBookingWorkflowImpl.java:45)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at com.uber.cadence.internal.sync.POJOWorkflowImplementationFactory$POJOWorkflowImplementation.execute(POJOWorkflowImplementationFactory.java:246)
+	at com.uber.cadence.internal.sync.WorkflowRunnable.run(WorkflowRunnable.java:47)
+	at com.uber.cadence.internal.sync.CancellationScopeImpl.run(CancellationScopeImpl.java:102)
+	at com.uber.cadence.internal.sync.WorkflowThreadImpl$RunnableWrapper.run(WorkflowThreadImpl.java:99)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.lang.RuntimeException: Flight booking did not work
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method:0)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at com.uber.cadence.internal.sync.POJOActivityTaskHandler$POJOActivityImplementation.execute(POJOActivityTaskHandler.java:224)
+	at com.uber.cadence.internal.sync.POJOActivityTaskHandler.handle(POJOActivityTaskHandler.java:200)
+	at com.uber.cadence.internal.worker.ActivityWorker$TaskHandlerImpl.handle(ActivityWorker.java:144)
+	at com.uber.cadence.internal.worker.ActivityWorker$TaskHandlerImpl.handle(ActivityWorker.java:107)
+	at com.uber.cadence.internal.worker.PollTaskExecutor.lambda$process$0(PollTaskExecutor.java:71)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+21:40:24.619 [Timer task] ERROR c.u.c.i.t.TestWorkflowMutableStateImpl - Failure trying to timeout a decision scheduledEventId=1
+com.uber.cadence.WorkflowExecutionAlreadyCompletedError: Workflow is already completed: FAILED
+	at com.uber.cadence.internal.testservice.TestWorkflowMutableStateImpl.checkCompleted(TestWorkflowMutableStateImpl.java:1246)
+	at com.uber.cadence.internal.testservice.TestWorkflowMutableStateImpl.update(TestWorkflowMutableStateImpl.java:231)
+	at com.uber.cadence.internal.testservice.TestWorkflowMutableStateImpl.completeDecisionUpdate(TestWorkflowMutableStateImpl.java:220)
+	at com.uber.cadence.internal.testservice.TestWorkflowMutableStateImpl.timeoutDecisionTask(TestWorkflowMutableStateImpl.java:749)
+	at com.uber.cadence.internal.testservice.TestWorkflowMutableStateImpl.lambda$startDecisionTask$0(TestWorkflowMutableStateImpl.java:320)
+	at com.uber.cadence.internal.testservice.SelfAdvancingTimerImpl$TimerPump.lambda$runLocked$0(SelfAdvancingTimerImpl.java:99)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+21:40:24.619 [Timer task] ERROR c.u.c.i.t.TestWorkflowMutableStateImpl - Failure trying to timeout a decision scheduledEventId=8
+com.uber.cadence.WorkflowExecutionAlreadyCompletedError: Workflow is already completed: FAILED
+	at com.uber.cadence.internal.testservice.TestWorkflowMutableStateImpl.checkCompleted(TestWorkflowMutableStateImpl.java:1246)
+	at com.uber.cadence.internal.testservice.TestWorkflowMutableStateImpl.update(TestWorkflowMutableStateImpl.java:231)
+	at com.uber.cadence.internal.testservice.TestWorkflowMutableStateImpl.completeDecisionUpdate(TestWorkflowMutableStateImpl.java:220)
+	at com.uber.cadence.internal.testservice.TestWorkflowMutableStateImpl.timeoutDecisionTask(TestWorkflowMutableStateImpl.java:749)
+	at com.uber.cadence.internal.testservice.TestWorkflowMutableStateImpl.lambda$startDecisionTask$0(TestWorkflowMutableStateImpl.java:320)
+	at com.uber.cadence.internal.testservice.SelfAdvancingTimerImpl$TimerPump.lambda$runLocked$0(SelfAdvancingTimerImpl.java:99)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+21:40:24.620 [Timer task] ERROR c.u.c.i.t.TestWorkflowMutableStateImpl - Failure trying to timeout a decision scheduledEventId=14
+com.uber.cadence.WorkflowExecutionAlreadyCompletedError: Workflow is already completed: FAILED
+	at com.uber.cadence.internal.testservice.TestWorkflowMutableStateImpl.checkCompleted(TestWorkflowMutableStateImpl.java:1246)
+	at com.uber.cadence.internal.testservice.TestWorkflowMutableStateImpl.update(TestWorkflowMutableStateImpl.java:231)
+	at com.uber.cadence.internal.testservice.TestWorkflowMutableStateImpl.completeDecisionUpdate(TestWorkflowMutableStateImpl.java:220)
+	at com.uber.cadence.internal.testservice.TestWorkflowMutableStateImpl.timeoutDecisionTask(TestWorkflowMutableStateImpl.java:749)
+	at com.uber.cadence.internal.testservice.TestWorkflowMutableStateImpl.lambda$startDecisionTask$0(TestWorkflowMutableStateImpl.java:320)
+	at com.uber.cadence.internal.testservice.SelfAdvancingTimerImpl$TimerPump.lambda$runLocked$0(SelfAdvancingTimerImpl.java:99)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+21:40:24.620 [Timer task] ERROR c.u.c.i.t.TestWorkflowMutableStateImpl - Failure trying to timeout a decision scheduledEventId=20
+com.uber.cadence.WorkflowExecutionAlreadyCompletedError: Workflow is already completed: FAILED
+	at com.uber.cadence.internal.testservice.TestWorkflowMutableStateImpl.checkCompleted(TestWorkflowMutableStateImpl.java:1246)
+	at com.uber.cadence.internal.testservice.TestWorkflowMutableStateImpl.update(TestWorkflowMutableStateImpl.java:231)
+	at com.uber.cadence.internal.testservice.TestWorkflowMutableStateImpl.completeDecisionUpdate(TestWorkflowMutableStateImpl.java:220)
+	at com.uber.cadence.internal.testservice.TestWorkflowMutableStateImpl.timeoutDecisionTask(TestWorkflowMutableStateImpl.java:749)
+	at com.uber.cadence.internal.testservice.TestWorkflowMutableStateImpl.lambda$startDecisionTask$0(TestWorkflowMutableStateImpl.java:320)
+	at com.uber.cadence.internal.testservice.SelfAdvancingTimerImpl$TimerPump.lambda$runLocked$0(SelfAdvancingTimerImpl.java:99)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+21:40:24.620 [Timer task] ERROR c.u.c.i.t.TestWorkflowMutableStateImpl - Failure trying to timeout a decision scheduledEventId=28
+com.uber.cadence.WorkflowExecutionAlreadyCompletedError: Workflow is already completed: FAILED
+	at com.uber.cadence.internal.testservice.TestWorkflowMutableStateImpl.checkCompleted(TestWorkflowMutableStateImpl.java:1246)
+	at com.uber.cadence.internal.testservice.TestWorkflowMutableStateImpl.update(TestWorkflowMutableStateImpl.java:231)
+	at com.uber.cadence.internal.testservice.TestWorkflowMutableStateImpl.completeDecisionUpdate(TestWorkflowMutableStateImpl.java:220)
+	at com.uber.cadence.internal.testservice.TestWorkflowMutableStateImpl.timeoutDecisionTask(TestWorkflowMutableStateImpl.java:749)
+	at com.uber.cadence.internal.testservice.TestWorkflowMutableStateImpl.lambda$startDecisionTask$0(TestWorkflowMutableStateImpl.java:320)
+	at com.uber.cadence.internal.testservice.SelfAdvancingTimerImpl$TimerPump.lambda$runLocked$0(SelfAdvancingTimerImpl.java:99)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+21:40:24.624 [Test worker] INFO  c.uber.cadence.worker.WorkerFactory - shutdownNow
+reserve car for 'trip1'
+booking hotel for 'trip1'
+failing to book flight for 'trip1'
+cancelling car reservation 'f3d42e24-87b6-4999-b92f-ea0527d67a2b' for 'trip1'
+cancelling hotel reservation 'd44c2fb1-f163-4a12-bb36-3b5c50bf6377' for 'trip1'
+21:40:24.633 [workflow-root] ERROR c.u.c.i.s.POJOWorkflowImplementationFactory - Workflow execution failure WorkflowID=5c018f9b-20d5-4742-b8b5-968b9bcdb361, RunID=10753cef-9632-4e7d-b2fd-2da84bbd02fd, WorkflowType=TripBookingWorkflow::bookTrip
+com.uber.cadence.workflow.ActivityFailureException: ActivityFailureException, ActivityType=&quot;TripBookingActivities::bookFlight&quot;, ActivityID=&quot;null&quot;, EventID=19
+	at java.base/java.lang.Thread.getStackTrace(Thread.java:1602)
+	at com.uber.cadence.internal.sync.ActivityStubBase.execute(ActivityStubBase.java:46)
+	at com.uber.cadence.internal.sync.ActivityStubImpl.execute(ActivityStubImpl.java:26)
+	at com.uber.cadence.internal.sync.ActivityInvocationHandler.lambda$getActivityFunc$0(ActivityInvocationHandler.java:51)
+	at com.uber.cadence.internal.sync.ActivityInvocationHandlerBase.invoke(ActivityInvocationHandlerBase.java:76)
+	at com.sun.proxy.$Proxy15.bookFlight(Unknown Source)
+	at com.uber.cadence.samples.bookingsaga.TripBookingWorkflowImpl.bookTrip(TripBookingWorkflowImpl.java:45)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at com.uber.cadence.internal.sync.POJOWorkflowImplementationFactory$POJOWorkflowImplementation.execute(POJOWorkflowImplementationFactory.java:246)
+	at com.uber.cadence.internal.sync.WorkflowRunnable.run(WorkflowRunnable.java:47)
+	at com.uber.cadence.internal.sync.CancellationScopeImpl.run(CancellationScopeImpl.java:102)
+	at com.uber.cadence.internal.sync.WorkflowThreadImpl$RunnableWrapper.run(WorkflowThreadImpl.java:99)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.lang.RuntimeException: Flight booking did not work
+	at com.uber.cadence.samples.bookingsaga.TripBookingActivitiesImpl.bookFlight(TripBookingActivitiesImpl.java:32)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method:0)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at com.uber.cadence.internal.sync.POJOActivityTaskHandler$POJOActivityImplementation.execute(POJOActivityTaskHandler.java:224)
+	at com.uber.cadence.internal.sync.POJOActivityTaskHandler.handle(POJOActivityTaskHandler.java:200)
+	at com.uber.cadence.internal.worker.ActivityWorker$TaskHandlerImpl.handle(ActivityWorker.java:144)
+	at com.uber.cadence.internal.worker.ActivityWorker$TaskHandlerImpl.handle(ActivityWorker.java:107)
+	at com.uber.cadence.internal.worker.PollTaskExecutor.lambda$process$0(PollTaskExecutor.java:71)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+21:40:24.635 [Timer task] ERROR c.u.c.i.t.TestWorkflowMutableStateImpl - Failure trying to timeout a decision scheduledEventId=1
+com.uber.cadence.WorkflowExecutionAlreadyCompletedError: Workflow is already completed: FAILED
+	at com.uber.cadence.internal.testservice.TestWorkflowMutableStateImpl.checkCompleted(TestWorkflowMutableStateImpl.java:1246)
+	at com.uber.cadence.internal.testservice.TestWorkflowMutableStateImpl.update(TestWorkflowMutableStateImpl.java:231)
+	at com.uber.cadence.internal.testservice.TestWorkflowMutableStateImpl.completeDecisionUpdate(TestWorkflowMutableStateImpl.java:220)
+	at com.uber.cadence.internal.testservice.TestWorkflowMutableStateImpl.timeoutDecisionTask(TestWorkflowMutableStateImpl.java:749)
+	at com.uber.cadence.internal.testservice.TestWorkflowMutableStateImpl.lambda$startDecisionTask$0(TestWorkflowMutableStateImpl.java:320)
+	at com.uber.cadence.internal.testservice.SelfAdvancingTimerImpl$TimerPump.lambda$runLocked$0(SelfAdvancingTimerImpl.java:99)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+21:40:24.635 [Timer task] ERROR c.u.c.i.t.TestWorkflowMutableStateImpl - Failure trying to timeout a decision scheduledEventId=8
+com.uber.cadence.WorkflowExecutionAlreadyCompletedError: Workflow is already completed: FAILED
+	at com.uber.cadence.internal.testservice.TestWorkflowMutableStateImpl.checkCompleted(TestWorkflowMutableStateImpl.java:1246)
+	at com.uber.cadence.internal.testservice.TestWorkflowMutableStateImpl.update(TestWorkflowMutableStateImpl.java:231)
+	at com.uber.cadence.internal.testservice.TestWorkflowMutableStateImpl.completeDecisionUpdate(TestWorkflowMutableStateImpl.java:220)
+	at com.uber.cadence.internal.testservice.TestWorkflowMutableStateImpl.timeoutDecisionTask(TestWorkflowMutableStateImpl.java:749)
+	at com.uber.cadence.internal.testservice.TestWorkflowMutableStateImpl.lambda$startDecisionTask$0(TestWorkflowMutableStateImpl.java:320)
+	at com.uber.cadence.internal.testservice.SelfAdvancingTimerImpl$TimerPump.lambda$runLocked$0(SelfAdvancingTimerImpl.java:99)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+21:40:24.635 [Timer task] ERROR c.u.c.i.t.TestWorkflowMutableStateImpl - Failure trying to timeout a decision scheduledEventId=14
+com.uber.cadence.WorkflowExecutionAlreadyCompletedError: Workflow is already completed: FAILED
+	at com.uber.cadence.internal.testservice.TestWorkflowMutableStateImpl.checkCompleted(TestWorkflowMutableStateImpl.java:1246)
+	at com.uber.cadence.internal.testservice.TestWorkflowMutableStateImpl.update(TestWorkflowMutableStateImpl.java:231)
+	at com.uber.cadence.internal.testservice.TestWorkflowMutableStateImpl.completeDecisionUpdate(TestWorkflowMutableStateImpl.java:220)
+	at com.uber.cadence.internal.testservice.TestWorkflowMutableStateImpl.timeoutDecisionTask(TestWorkflowMutableStateImpl.java:749)
+	at com.uber.cadence.internal.testservice.TestWorkflowMutableStateImpl.lambda$startDecisionTask$0(TestWorkflowMutableStateImpl.java:320)
+	at com.uber.cadence.internal.testservice.SelfAdvancingTimerImpl$TimerPump.lambda$runLocked$0(SelfAdvancingTimerImpl.java:99)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+21:40:24.635 [Timer task] ERROR c.u.c.i.t.TestWorkflowMutableStateImpl - Failure trying to timeout a decision scheduledEventId=20
+com.uber.cadence.WorkflowExecutionAlreadyCompletedError: Workflow is already completed: FAILED
+	at com.uber.cadence.internal.testservice.TestWorkflowMutableStateImpl.checkCompleted(TestWorkflowMutableStateImpl.java:1246)
+	at com.uber.cadence.internal.testservice.TestWorkflowMutableStateImpl.update(TestWorkflowMutableStateImpl.java:231)
+	at com.uber.cadence.internal.testservice.TestWorkflowMutableStateImpl.completeDecisionUpdate(TestWorkflowMutableStateImpl.java:220)
+	at com.uber.cadence.internal.testservice.TestWorkflowMutableStateImpl.timeoutDecisionTask(TestWorkflowMutableStateImpl.java:749)
+	at com.uber.cadence.internal.testservice.TestWorkflowMutableStateImpl.lambda$startDecisionTask$0(TestWorkflowMutableStateImpl.java:320)
+	at com.uber.cadence.internal.testservice.SelfAdvancingTimerImpl$TimerPump.lambda$runLocked$0(SelfAdvancingTimerImpl.java:99)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+21:40:24.636 [Test worker] INFO  c.uber.cadence.worker.WorkerFactory - shutdownNow
+21:40:24.636 [Timer task] ERROR c.u.c.i.t.TestWorkflowMutableStateImpl - Failure trying to timeout a decision scheduledEventId=28
+com.uber.cadence.WorkflowExecutionAlreadyCompletedError: Workflow is already completed: FAILED
+	at com.uber.cadence.internal.testservice.TestWorkflowMutableStateImpl.checkCompleted(TestWorkflowMutableStateImpl.java:1246)
+	at com.uber.cadence.internal.testservice.TestWorkflowMutableStateImpl.update(TestWorkflowMutableStateImpl.java:231)
+	at com.uber.cadence.internal.testservice.TestWorkflowMutableStateImpl.completeDecisionUpdate(TestWorkflowMutableStateImpl.java:220)
+	at com.uber.cadence.internal.testservice.TestWorkflowMutableStateImpl.timeoutDecisionTask(TestWorkflowMutableStateImpl.java:749)
+	at com.uber.cadence.internal.testservice.TestWorkflowMutableStateImpl.lambda$startDecisionTask$0(TestWorkflowMutableStateImpl.java:320)
+	at com.uber.cadence.internal.testservice.SelfAdvancingTimerImpl$TimerPump.lambda$runLocked$0(SelfAdvancingTimerImpl.java:99)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 6.8.3</a> at May 20, 2025, 9:40:25 PM</p>
+</div>
+</div>
+</body>
+</html>

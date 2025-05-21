@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.uber.cadence.samples.replaytests.HelloPeriodicReplayTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2025-05-21T04:40:24" hostname="Alexiss-MacBook-Pro.local" time="0.011">
+  <properties/>
+  <testcase name="testReplay_continueAsNew" classname="com.uber.cadence.samples.replaytests.HelloPeriodicReplayTest" time="0.006"/>
+  <testcase name="testReplay_continueAsNew_moreFrequency" classname="com.uber.cadence.samples.replaytests.HelloPeriodicReplayTest" time="0.005"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

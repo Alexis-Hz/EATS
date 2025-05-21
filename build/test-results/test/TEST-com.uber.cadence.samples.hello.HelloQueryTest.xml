@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.uber.cadence.samples.hello.HelloQueryTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-05-21T04:40:24" hostname="Alexiss-MacBook-Pro.local" time="0.004">
+  <properties/>
+  <testcase name="testQuery" classname="com.uber.cadence.samples.hello.HelloQueryTest" time="0.004"/>
+  <system-out><![CDATA[21:40:24.904 [Test worker] INFO  c.uber.cadence.worker.WorkerFactory - shutdownNow
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

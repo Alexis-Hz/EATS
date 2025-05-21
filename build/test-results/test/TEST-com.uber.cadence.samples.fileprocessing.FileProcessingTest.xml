@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.uber.cadence.samples.fileprocessing.FileProcessingTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2025-05-21T04:40:24" hostname="Alexiss-MacBook-Pro.local" time="0.051">
+  <properties/>
+  <testcase name="testHappyPath" classname="com.uber.cadence.samples.fileprocessing.FileProcessingTest" time="0.037"/>
+  <testcase name="testHostFailover" classname="com.uber.cadence.samples.fileprocessing.FileProcessingTest" time="0.014"/>
+  <system-out><![CDATA[21:40:24.656 [Timer task] ERROR c.u.c.i.t.TestWorkflowMutableStateImpl - Failure trying to timeout a decision scheduledEventId=1
+com.uber.cadence.WorkflowExecutionAlreadyCompletedError: Workflow is already completed: COMPLETED
+	at com.uber.cadence.internal.testservice.TestWorkflowMutableStateImpl.checkCompleted(TestWorkflowMutableStateImpl.java:1246)
+	at com.uber.cadence.internal.testservice.TestWorkflowMutableStateImpl.update(TestWorkflowMutableStateImpl.java:231)
+	at com.uber.cadence.internal.testservice.TestWorkflowMutableStateImpl.completeDecisionUpdate(TestWorkflowMutableStateImpl.java:220)
+	at com.uber.cadence.internal.testservice.TestWorkflowMutableStateImpl.timeoutDecisionTask(TestWorkflowMutableStateImpl.java:749)
+	at com.uber.cadence.internal.testservice.TestWorkflowMutableStateImpl.lambda$startDecisionTask$0(TestWorkflowMutableStateImpl.java:320)
+	at com.uber.cadence.internal.testservice.SelfAdvancingTimerImpl$TimerPump.lambda$runLocked$0(SelfAdvancingTimerImpl.java:99)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+21:40:24.663 [Timer task] ERROR c.u.c.i.t.TestWorkflowMutableStateImpl - Failure trying to timeout a decision scheduledEventId=9
+com.uber.cadence.WorkflowExecutionAlreadyCompletedError: Workflow is already completed: COMPLETED
+	at com.uber.cadence.internal.testservice.TestWorkflowMutableStateImpl.checkCompleted(TestWorkflowMutableStateImpl.java:1246)
+	at com.uber.cadence.internal.testservice.TestWorkflowMutableStateImpl.update(TestWorkflowMutableStateImpl.java:231)
+	at com.uber.cadence.internal.testservice.TestWorkflowMutableStateImpl.completeDecisionUpdate(TestWorkflowMutableStateImpl.java:220)
+	at com.uber.cadence.internal.testservice.TestWorkflowMutableStateImpl.timeoutDecisionTask(TestWorkflowMutableStateImpl.java:749)
+	at com.uber.cadence.internal.testservice.TestWorkflowMutableStateImpl.lambda$startDecisionTask$0(TestWorkflowMutableStateImpl.java:320)
+	at com.uber.cadence.internal.testservice.SelfAdvancingTimerImpl$TimerPump.lambda$runLocked$0(SelfAdvancingTimerImpl.java:99)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+21:40:24.666 [Timer task] ERROR c.u.c.i.t.TestWorkflowMutableStateImpl - Failure trying to timeout a decision scheduledEventId=15
+com.uber.cadence.WorkflowExecutionAlreadyCompletedError: Workflow is already completed: COMPLETED
+	at com.uber.cadence.internal.testservice.TestWorkflowMutableStateImpl.checkCompleted(TestWorkflowMutableStateImpl.java:1246)
+	at com.uber.cadence.internal.testservice.TestWorkflowMutableStateImpl.update(TestWorkflowMutableStateImpl.java:231)
+	at com.uber.cadence.internal.testservice.TestWorkflowMutableStateImpl.completeDecisionUpdate(TestWorkflowMutableStateImpl.java:220)
+	at com.uber.cadence.internal.testservice.TestWorkflowMutableStateImpl.timeoutDecisionTask(TestWorkflowMutableStateImpl.java:749)
+	at com.uber.cadence.internal.testservice.TestWorkflowMutableStateImpl.lambda$startDecisionTask$0(TestWorkflowMutableStateImpl.java:320)
+	at com.uber.cadence.internal.testservice.SelfAdvancingTimerImpl$TimerPump.lambda$runLocked$0(SelfAdvancingTimerImpl.java:99)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+21:40:24.668 [Timer task] ERROR c.u.c.i.t.TestWorkflowMutableStateImpl - Failure trying to timeout a decision scheduledEventId=21
+com.uber.cadence.WorkflowExecutionAlreadyCompletedError: Workflow is already completed: COMPLETED
+	at com.uber.cadence.internal.testservice.TestWorkflowMutableStateImpl.checkCompleted(TestWorkflowMutableStateImpl.java:1246)
+	at com.uber.cadence.internal.testservice.TestWorkflowMutableStateImpl.update(TestWorkflowMutableStateImpl.java:231)
+	at com.uber.cadence.internal.testservice.TestWorkflowMutableStateImpl.completeDecisionUpdate(TestWorkflowMutableStateImpl.java:220)
+	at com.uber.cadence.internal.testservice.TestWorkflowMutableStateImpl.timeoutDecisionTask(TestWorkflowMutableStateImpl.java:749)
+	at com.uber.cadence.internal.testservice.TestWorkflowMutableStateImpl.lambda$startDecisionTask$0(TestWorkflowMutableStateImpl.java:320)
+	at com.uber.cadence.internal.testservice.SelfAdvancingTimerImpl$TimerPump.lambda$runLocked$0(SelfAdvancingTimerImpl.java:99)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+21:40:24.676 [Time-limited test] INFO  c.uber.cadence.worker.WorkerFactory - shutdownNow
+21:40:24.690 [Timer task] ERROR c.u.c.i.t.TestWorkflowMutableStateImpl - Failure trying to timeout a decision scheduledEventId=1
+com.uber.cadence.WorkflowExecutionAlreadyCompletedError: Workflow is already completed: COMPLETED
+	at com.uber.cadence.internal.testservice.TestWorkflowMutableStateImpl.checkCompleted(TestWorkflowMutableStateImpl.java:1246)
+	at com.uber.cadence.internal.testservice.TestWorkflowMutableStateImpl.update(TestWorkflowMutableStateImpl.java:231)
+	at com.uber.cadence.internal.testservice.TestWorkflowMutableStateImpl.completeDecisionUpdate(TestWorkflowMutableStateImpl.java:220)
+	at com.uber.cadence.internal.testservice.TestWorkflowMutableStateImpl.timeoutDecisionTask(TestWorkflowMutableStateImpl.java:749)
+	at com.uber.cadence.internal.testservice.TestWorkflowMutableStateImpl.lambda$startDecisionTask$0(TestWorkflowMutableStateImpl.java:320)
+	at com.uber.cadence.internal.testservice.SelfAdvancingTimerImpl$TimerPump.lambda$runLocked$0(SelfAdvancingTimerImpl.java:99)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+21:40:24.690 [Time-limited test] INFO  c.uber.cadence.worker.WorkerFactory - shutdownNow
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

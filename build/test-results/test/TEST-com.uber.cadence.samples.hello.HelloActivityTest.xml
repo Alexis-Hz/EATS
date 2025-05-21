@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.uber.cadence.samples.hello.HelloActivityTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2025-05-21T04:40:24" hostname="Alexiss-MacBook-Pro.local" time="0.008">
+  <properties/>
+  <testcase name="testActivityImpl" classname="com.uber.cadence.samples.hello.HelloActivityTest" time="0.004"/>
+  <testcase name="testMockedActivity" classname="com.uber.cadence.samples.hello.HelloActivityTest" time="0.004"/>
+  <system-out><![CDATA[21:40:24.766 [Test worker] INFO  c.uber.cadence.worker.WorkerFactory - shutdownNow
+21:40:24.770 [Test worker] INFO  c.uber.cadence.worker.WorkerFactory - shutdownNow
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
