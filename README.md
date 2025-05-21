@@ -1,4 +1,10 @@
 # Alexis-Hz Cadence quick test
+
+location of the task code
+ [eats folder](./src/main/java/cp,/uber/cadence/samples/eats)
+- I put all the code in the same sample since that was the established pattern in the repo for samples
+- I did not include tests, since i prioritized documentation over it, that is something I would further add if required
+
 My general approach on ramping up to cadence and completing the assignment was the following 
 
 ## Cadence ramp up 
