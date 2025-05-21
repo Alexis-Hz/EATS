@@ -1,144 +1,44 @@
-# Java Cadence Samples
-These samples demonstrate various capabilities of Java Cadence client and server. You can learn more about Cadence at:
-* [Cadence Service](https://github.com/uber/cadence)
-* [Cadence Java Client](https://github.com/uber/cadence-java-client)
-* [Go Cadence Client](https://github.com/uber-go/cadence-client)
+# Alexis-Hz Cadence quick test
+My general approach on ramping up to cadence and completing the assignment was the following 
 
-## Overview of the Samples
+## Cadence ramp up 
+> 30m
+Video tutorial and documentation ramp up. reading as much of the documentation manually as well as leveraging AI to condense relevant information and guide me to the right documentation parts.
+I watched a lot of Cadence videos asynchronously while I was doing other things over the last 2 days, i did not include this time
 
-* **HelloWorld Samples**
+## Sample code analysis 
+> 30m
+cloned the sample code repo and analyzed the most relevant components as well as nomenclature and style best practices
+leveraged AI to guide me to the key components in each of the samples as well as to quickly find the most relevant samples to leverage
 
-    The following samples demonstrate:
+## cadence setup 
+> 2hrs
+a lot of this was done asynchronously since it required to download a lot of specific versions of Java, gradle and other specific components and libraries.
 
-  * **HelloActivity**: a single activity workflow
-  * **HelloActivityRetry**: how to retry an activity
-  * **HelloAsync**: how to call activities asynchronously and wait for them using Promises
-  * **HelloAsyncLambda**: how to run part of a workflow asynchronously in a separate task (thread)
-  * **HelloAsyncActivityCompletion**: an asynchronous activity implementation
-  * **HelloChild**: a child workflow
-  * **HelloException**: exception propagation and wrapping
-  * **HelloQuery**: a query
-  * **HelloSignal**: sending and handling a signal
-  * **HelloPeriodic**: a sample workflow that executes an activity periodically forever
-  * **HelloSearchAttributes**: how to use search attributes
-  * **HelloCron**: a cron workflow 
+My key takeaway is that it was very hard to setup cadence using my personal portainer server, there were loads of conflicts with ports and cross container permissions.
 
-* **FileProcessing** demonstrates task routing features. The sample workflow downloads a file, processes it, and uploads
-    the result to a destination. The first activity can be picked up by any worker. However, the second and third activities
-    must be executed on the same host as the first one.
+It was much easier to just use self host locally to test.
 
-## Get the Samples
+once I had identified the task at hand, requirements I split the task into 4 stages
 
-Run the following commands:
+## Step 1
+Execute a simple hello world to test the server and client working
+> 20m
 
-      git clone https://github.com/uber/cadence-java-samples
-      cd cadence-java-samples
+## Step 2
+Create a Workflow that took an order and printed details 
+> 15m
 
-## Import into IntelliJ
+## Step 3
+modify the workflow to leverage signals and workflow.sleep to add latency to the workflow as well as change it to be asynchronous
+> 40m
 
-In the IntelliJ user interface, navigate to **File**->**New**->**Project from Existing Sources**.
+My key takeaway here is that it was a little confusing to understand the order of execution of some of the workflow stages, but once I understood it it was fairly easy
 
-Select the cloned directory. In the **Import Project page**, select **Import project from external model**,
-choose **Gradle** and then click **Next**->**Finish**.
+## Step 5
+Add a child workflow and execute delivery within it using a sleeep command
+> 5m
 
-## Build the Samples
-
-      ./gradlew build
-
-## Run Cadence Server
-
-Run Cadence Server using Docker Compose:
-
-    curl -O https://raw.githubusercontent.com/uber/cadence/master/docker/docker-compose.yml
-    docker-compose up
-
-If this does not work, see the instructions for running Cadence Server
-at https://github.com/uber/cadence/blob/master/README.md.
-
-## Register the Domain
-
-To register the *samples-domain* domain, run the following command once before running any samples:
-
-    ./gradlew -q execute -PmainClass=com.uber.cadence.samples.common.RegisterDomain
-
-Or using Cadence CLI:
-
-```
-cadence --domain samples-domain domain register
-```
-
-## See Cadence UI
-
-The Cadence Server running in a docker container includes a Web UI.
-
-Connect to [http://localhost:8088](http://localhost:8088).
-
-Enter the *samples-domain* domain. You'll see a "No Results" page. After running any sample, change the filter in the
-top right corner from "Open" to "Closed" to see the list of the completed workflows.
-
-Click on a *RUN ID* of a workflow to see more details about it. Try different view formats to get a different level of
-details about the execution history.
-
-## Install Cadence CLI
-
-[Command Line Interface Documentation](https://mfateev.github.io/cadence/docs/08_cli)
-
-## Run the samples
-
-Each sample has specific requirements for running it. The following sections contain information about
-how to run each of the samples after you've built them using the preceding instructions.
-
-Don't forget to check unit tests found under src/test/java!
-
-### Hello World
-
-To run the hello world samples:
-
-    ./gradlew -q execute -PmainClass=com.uber.cadence.samples.hello.HelloActivity
-    ./gradlew -q execute -PmainClass=com.uber.cadence.samples.hello.HelloActivityRetry
-    ./gradlew -q execute -PmainClass=com.uber.cadence.samples.hello.HelloAsync
-    ./gradlew -q execute -PmainClass=com.uber.cadence.samples.hello.HelloAsyncActivityCompletion
-    ./gradlew -q execute -PmainClass=com.uber.cadence.samples.hello.HelloAsyncLambda
-    ./gradlew -q execute -PmainClass=com.uber.cadence.samples.hello.HelloChild
-    ./gradlew -q execute -PmainClass=com.uber.cadence.samples.hello.HelloException
-    ./gradlew -q execute -PmainClass=com.uber.cadence.samples.hello.HelloPeriodic
-    ./gradlew -q execute -PmainClass=com.uber.cadence.samples.hello.HelloQuery
-    ./gradlew -q execute -PmainClass=com.uber.cadence.samples.hello.HelloSignal
-    ./gradlew -q execute -PmainClass=com.uber.cadence.samples.hello.HelloSearchAttributes
-    ./gradlew -q execute -PmainClass=com.uber.cadence.samples.hello.HelloCron
-
-### File Processing
-
-This sample has two executables. Execute each command in a separate terminal window. The first command
-runs the worker that hosts the workflow and activities implementation. To demonstrate that activities
-execute together, we recommend that you run more than one instance of this worker.
-
-    ./gradlew -q execute -PmainClass=com.uber.cadence.samples.fileprocessing.FileProcessingWorker
-
-The second command starts workflows. Each invocation starts a new workflow execution.
-
-    ./gradlew -q execute -PmainClass=com.uber.cadence.samples.fileprocessing.FileProcessingStarter
-    
-### Trip Booking
-
-Cadence implementation of the [Camunda BPMN trip booking example](https://github.com/berndruecker/trip-booking-saga-java)
-
-Demonstrates Cadence approach to SAGA.
-
-To run:
-
-    ./gradlew -q execute -PmainClass=com.uber.cadence.samples.bookingsaga.TripBookingSaga
-
-### Sprint Boot Application
-
-Example of how to start a cadence worker service using Spring Boot Framework
-
-To run:
-
-    # Start Cadence Server
-    # see https://github.com/uber/cadence/tree/master/docker
-    # register domain
-    ./gradlew -q execute -PmainClass=com.uber.cadence.samples.common.RegisterDomain
-    ./gradlew -q execute -PmainClass=com.uber.cadence.samples.spring.CadenceSamplesApplication
-
-Apache 2.0 License, please see [LICENSE](https://github.com/cadence-workflow/cadence-java-samples/blob/master/LICENSE.txt) for details.
+## Step 6
+Documentation, cleaning and packaging
+> 15m
