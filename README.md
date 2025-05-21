@@ -1,7 +1,7 @@
 # Alexis-Hz Cadence quick test
 
 location of the task code
- [eats folder](https://github.com/Alexis-Hz/EATS/tree/main/src/main/java/com/uber/cadence/samples)
+ [eats folder](https://github.com/Alexis-Hz/EATS/tree/main/src/main/java/com/uber/cadence/samples/eats)
 - I put all the code in the same sample since that was the established pattern in the repo for samples
 - I did not include tests, since i prioritized documentation over it, that is something I would further add if required
 
